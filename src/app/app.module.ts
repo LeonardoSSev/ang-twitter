@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing'
 import { LoginComponent } from './modules/authentication/login/login.component';
+import { TimelineComponent } from './modules/timeline/timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
