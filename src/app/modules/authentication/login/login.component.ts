@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('username') inputUsername: ElementRef;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  performLoginAction(event) {
+    event.preventDefault();
+
+    if (this.inputUsername.nativeElement.value !== '') {
+      this.router.navigate(['timeline']);
+    }
   }
 
 }
