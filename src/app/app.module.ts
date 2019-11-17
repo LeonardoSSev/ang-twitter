@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing'
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { TimelineComponent } from './modules/timeline/timeline.component';
+import { TweetComponent } from './modules/timeline/tweet/tweet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TimelineComponent
+    TimelineComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,
