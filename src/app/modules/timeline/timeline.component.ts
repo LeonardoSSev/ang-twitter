@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { GeneralService } from 'src/app/shared/general/general-service.service';
 
+import { Tweet } from './tweet/Tweet';
+import { TweetService } from 'src/app/shared/tweet/tweet.service';
+
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
@@ -8,13 +11,17 @@ import { GeneralService } from 'src/app/shared/general/general-service.service';
 })
 export class TimelineComponent implements OnInit {
 
-  tweets = [];
+  tweets: Tweet[];
 
   @ViewChild('newTweet', { static: false }) newTweet: ElementRef;
 
-  constructor(private generalService: GeneralService) { }
+  constructor(private generalService: GeneralService, private tweetService: TweetService) { }
 
   ngOnInit() {
+    const author = localStorage.getItem('username');
+
+    this.tweetService.getTweetsFromAuthor(author)
+    .subscribe(tweets => this.tweets = tweets);
   }
 
   handleNewTweet(event) {
