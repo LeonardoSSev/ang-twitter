@@ -2,7 +2,11 @@
   <img height="24" src="../../../assets/img/twitter.svg" alt="AngTwitter"/>
 
   <form>
-    <textarea placeholder="O que está acontecendo?"></textarea>
+    <textarea
+      #newTweet
+      placeholder="O que está acontecendo?"
+      (keypress)="handleNewTweet($event)"
+    ></textarea>
   </form>
 
   <ul class="tweet-list">
