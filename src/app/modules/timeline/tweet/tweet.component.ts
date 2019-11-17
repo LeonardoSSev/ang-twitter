@@ -14,4 +14,8 @@ export class TweetComponent implements OnInit {
   ngOnInit() {
   }
 
+  performLike() {
+    this.tweet.likes++;
+  }
+
 }
