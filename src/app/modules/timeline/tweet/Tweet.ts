@@ -1,5 +1,7 @@
 export interface Tweet {
-  author: String;
-  content: String;
-  likes: Number;
+  id: string;
+  author: string;
+  content: string;
+  likes: number;
+  createdAt: Date;
 }
