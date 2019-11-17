@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
   performLoginAction(event) {
     event.preventDefault();
 
-    if (this.inputUsername.nativeElement.value !== '') {
+    const username = this.inputUsername.nativeElement.value
+    if (username !== '') {
+      localStorage.setItem(username, username)
       this.router.navigate(['timeline']);
     }
   }
