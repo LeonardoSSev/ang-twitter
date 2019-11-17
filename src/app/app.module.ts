@@ -11,6 +11,7 @@ import { GeneralService } from './shared/general/general-service.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TweetService } from './shared/tweet/tweet.service';
+import { LikeService } from './shared/like/like.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { TweetService } from './shared/tweet/tweet.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [GeneralService, TweetService],
+  providers: [GeneralService, TweetService, LikeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
