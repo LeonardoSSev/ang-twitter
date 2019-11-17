@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     const username = this.inputUsername.nativeElement.value
     if (username !== '') {
-      localStorage.setItem(username, username)
+      localStorage.setItem('username', username)
       this.router.navigate(['timeline']);
     }
   }
