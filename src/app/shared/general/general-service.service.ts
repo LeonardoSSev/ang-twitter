@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class GeneralService {
 
   constructor() { }
+
+  getUsername() {
+    return localStorage.getItem('username');
+  }
 }
