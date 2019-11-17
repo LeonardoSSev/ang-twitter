@@ -6,6 +6,11 @@ import { TimelineComponent } from './modules/timeline/timeline.component';
 
 const APP_ROUTES: Routes = [
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
