@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LikeService } from 'src/app/shared/like/like.service';
+import { Tweet } from './Tweet';
 
 @Component({
   selector: 'Tweet',
@@ -7,15 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TweetComponent implements OnInit {
 
-  @Input() tweet;
+  @Input() tweet: Tweet;
 
-  constructor() { }
+  constructor(private likeService: LikeService) { }
 
   ngOnInit() {
   }
 
-  performLike() {
-    this.tweet.likes++;
+  likeTweet() {
+    this.likeService.likeTweet(this.tweet.id).subscribe();
   }
 
 }
