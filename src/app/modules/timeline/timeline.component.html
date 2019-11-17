@@ -9,7 +9,14 @@
     ></textarea>
   </form>
 
-  <ul class="tweet-list">
-    <Tweet *ngFor="let tweet of tweets" [tweet]="tweet"></Tweet>
+  <ul class="tweet-list" *ngIf="tweets$ | async as tweets; else loading">
+    <Tweet
+      *ngFor="let tweet of tweets"
+      [tweet]="tweet"
+    ></Tweet>
   </ul>
+
+  <ng-template #loading>
+    <p>Carregando..</p>
+  </ng-template>
 </section>
