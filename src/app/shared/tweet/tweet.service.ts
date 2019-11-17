@@ -14,4 +14,8 @@ export class TweetService {
   getTweetsFromAuthor(author: String) {
     return this.httpClient.get<Tweet[]>(`${this.API}?author=${author}`);
   }
+
+  storeTweet(payload: any) {
+    return this.httpClient.post<Tweet>(this.API, payload);
+  }
 }
