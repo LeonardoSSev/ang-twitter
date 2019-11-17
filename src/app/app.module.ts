@@ -9,6 +9,8 @@ import { TimelineComponent } from './modules/timeline/timeline.component';
 import { TweetComponent } from './modules/timeline/tweet/tweet.component';
 import { GeneralService } from './shared/general/general-service.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TweetService } from './shared/tweet/tweet.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [GeneralService],
+  providers: [GeneralService, TweetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
