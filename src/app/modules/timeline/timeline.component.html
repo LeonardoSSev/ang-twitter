@@ -1,4 +1,4 @@
-<main class="timeline-wrapper">
+<section class="timeline-wrapper">
   <img height="24" src="../../../assets/img/twitter.svg" alt="AngTwitter"/>
 
   <form>
@@ -6,5 +6,6 @@
   </form>
 
   <ul class="tweet-list">
+    <Tweet *ngFor="let tweet of tweets" [tweet]="tweet"></Tweet>
   </ul>
-</main>
+</section>
