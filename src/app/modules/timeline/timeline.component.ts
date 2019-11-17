@@ -20,9 +20,7 @@ export class TimelineComponent implements OnInit {
   constructor(private generalService: GeneralService, private tweetService: TweetService) { }
 
   ngOnInit() {
-    const author = localStorage.getItem('username');
-
-    this.tweets$ = this.tweetService.getTweetsFromAuthor(author);
+    this.tweets$ = this.tweetService.getTweets();
   }
 
   handleNewTweet(event) {

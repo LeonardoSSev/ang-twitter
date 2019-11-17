@@ -11,8 +11,8 @@ export class TweetService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTweetsFromAuthor(author: String) {
-    return this.httpClient.get<Tweet[]>(`${this.API}?author=${author}`);
+  getTweets() {
+    return this.httpClient.get<Tweet[]>(this.API);
   }
 
   storeTweet(payload: any) {
