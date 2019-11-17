@@ -13,6 +13,8 @@ export class TimelineComponent implements OnInit {
 
   tweets$: Observable<Tweet[]>;
 
+  newTweet$: Observable<Tweet>;
+
   @ViewChild('newTweet', { static: false }) newTweet: ElementRef;
 
   constructor(private generalService: GeneralService, private tweetService: TweetService) { }
@@ -28,16 +30,12 @@ export class TimelineComponent implements OnInit {
       return;
     }
 
-    const author = this.generalService.getUsername();
-    const content = this.newTweet.nativeElement.value;
-
-    const tweet = {
-      author,
-      content,
-      likes: 0
+    const payload = {
+      author: this.generalService.getUsername(),
+      content: this.newTweet.nativeElement.value
     }
 
-    this.tweets.unshift(tweet);
+    this.tweetService.storeTweet(payload).subscribe();
 
     this.newTweet.nativeElement.value = '';
   }
