@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('username') inputUsername: ElementRef;
+  @ViewChild('username', {static: false}) inputUsername: ElementRef;
 
   constructor(private router: Router) { }
 
