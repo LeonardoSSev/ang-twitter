@@ -7,6 +7,8 @@ import { routing } from './app.routing'
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { TimelineComponent } from './modules/timeline/timeline.component';
 import { TweetComponent } from './modules/timeline/tweet/tweet.component';
+import { GeneralService } from './shared/general/general-service.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { TweetComponent } from './modules/timeline/tweet/tweet.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    FormsModule
   ],
-  providers: [],
+  providers: [GeneralService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
